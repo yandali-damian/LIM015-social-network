@@ -1,0 +1,99 @@
+* {
+    font-family: Roboto;
+    margin: 0;
+}
+
+img {
+    position: absolute;
+    width: 280px;
+    height: 189px;
+    left: 55px;
+    top: 69px;
+}
+
+.img-warique {
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    left: 119px;
+    top: 279px;
+}
+
+.input-email,
+.input-password {
+    position: absolute;
+    width: 257px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px solid #EBB54B;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.input-email {
+    left: 77px;
+    top: 350px;
+}
+
+.input-password {
+    left: 80px;
+    top: 416px;
+}
+
+.btn-login {
+    position: absolute;
+    width: 171px;
+    height: 35px;
+    left: 120px;
+    top: 480px;
+    background: #EAB351;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+p {
+    position: absolute;
+    width: 134px;
+    height: 21px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.p-login {
+    left: 143px;
+    top: 540px;
+}
+
+.p-account {
+    left: 95px;
+    top: 624px;
+}
+
+.img-facebook,
+.img-google {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 578px;
+}
+
+.img-facebook {
+    left: 155px;
+}
+
+.img-google {
+    left: 209px;
+}
+
+footer {
+    border-top: 2px solid #EAB351;
+    position: fixed;
+    height: 30px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 16px;
+}
