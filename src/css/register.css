@@ -1,0 +1,112 @@
+.img-register {
+    position: absolute;
+    width: 144px;
+    height: 45px;
+    left: 135px;
+    top: 63px;
+}
+
+.name-register,
+.email-register,
+.password-register,
+.confirm-register {
+    background: #FFFFFF;
+    border: 1px solid #EBB54B;
+    box-sizing: border-box;
+    border-radius: 20px;
+    position: absolute;
+    width: 257px;
+    height: 35px;
+    left: 78px;
+}
+
+.name-register {
+    top: 142px;
+}
+
+.email-register {
+    top: 202px;
+}
+
+.password-register {
+    top: 262px;
+}
+
+.confirm-register {
+    top: 322px;
+}
+
+.sexo-register {
+    font-size: 14px;
+    line-height: 16px;
+    color: #0C0B0B;
+    position: absolute;
+    width: 134px;
+    height: 21px;
+    left: 92px;
+    top: 382px;
+}
+
+.container-div {
+    position: absolute;
+    width: 134px;
+    height: 30px;
+    top: 400px;
+    left: 92px;
+}
+
+.line-register {
+    position: absolute;
+    width: 256px;
+    height: 19px;
+    left: 83px;
+    top: 453px;
+    color: #8C8888;
+}
+
+.btn-register {
+    position: absolute;
+    width: 171px;
+    height: 35px;
+    left: 121px;
+    top: 495px;
+    background: #EAB351;
+    border-radius: 20px;
+    right: 25.73%;
+    bottom: 22.86%;
+    color: #0C0B0B;
+}
+
+.btn-register,
+.line-register {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.p-register {
+    width: 176px;
+    height: 21px;
+    left: 138px;
+    top: 553px;
+    color: #0C0B0B;
+}
+
+.facebook-register {
+    left: 160px;
+}
+
+.google-register {
+    left: 219px;
+}
+
+.facebook-register,
+.google-register {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 578px;
+}
