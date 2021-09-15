@@ -22,8 +22,9 @@ img {
 .input-email,
 .input-password {
     position: absolute;
-    width: 257px;
+    width: 254px;
     height: 35px;
+    left: 80px;
     background: #FFFFFF;
     border: 1px solid #EBB54B;
     box-sizing: border-box;
@@ -31,23 +32,22 @@ img {
 }
 
 .input-email {
-    left: 77px;
     top: 350px;
 }
 
 .input-password {
-    left: 80px;
     top: 416px;
 }
 
 .btn-login {
     position: absolute;
-    width: 171px;
+    width: 254px;
     height: 35px;
-    left: 120px;
+    left: 80px;
     top: 480px;
     background: #EAB351;
     border-radius: 20px;
+    border: none;
 }
 
 p {
@@ -68,20 +68,12 @@ p {
     top: 624px;
 }
 
-.img-facebook,
 .img-google {
     position: absolute;
     width: 30px;
     height: 30px;
+    left: 190px;
     top: 578px;
-}
-
-.img-facebook {
-    left: 155px;
-}
-
-.img-google {
-    left: 209px;
 }
 
 .register {
@@ -92,7 +84,7 @@ p {
     position: absolute;
     width: 70px;
     height: 18px;
-    left: 247px;
+    left: 235px;
     top: 622px;
     text-decoration: none;
 }

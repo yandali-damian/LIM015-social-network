@@ -1,13 +1,10 @@
 // Registrar las vistas
-
-import Login from './login.js';
-import Register from './register.js';
-import Error from './404.js';
+import {login, register, error } from './views-templates.js';
 
 const components = {
-    login: Login,
-    register: Register,
-    error: Error
+    login: login,
+    register: register,
+    error: error
 }
 
 export { components };

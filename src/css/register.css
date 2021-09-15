@@ -1,9 +1,9 @@
 .img-register {
     position: absolute;
-    width: 144px;
-    height: 45px;
-    left: 135px;
-    top: 63px;
+    width: 150px;
+    height: 40px;
+    left: 125px;
+    top: 89px;
 }
 
 .name-register,
@@ -17,34 +17,23 @@
     position: absolute;
     width: 257px;
     height: 35px;
-    left: 78px;
+    left: 74px;
 }
 
 .name-register {
-    top: 142px;
+    top: 209px;
 }
 
 .email-register {
-    top: 202px;
+    top: 269px;
 }
 
 .password-register {
-    top: 262px;
+    top: 329px;
 }
 
 .confirm-register {
-    top: 322px;
-}
-
-.sexo-register {
-    font-size: 14px;
-    line-height: 16px;
-    color: #0C0B0B;
-    position: absolute;
-    width: 134px;
-    height: 21px;
-    left: 92px;
-    top: 382px;
+    top: 389px;
 }
 
 .container-div {
@@ -55,58 +44,43 @@
     left: 92px;
 }
 
+.btn-register {
+    position: absolute;
+    width: 257px;
+    height: 35px;
+    left: 74px;
+    top: 502px;
+    background: #EAB351;
+    border-radius: 20px;
+    border: none;
+}
+
 .line-register {
     position: absolute;
-    width: 256px;
-    height: 19px;
-    left: 83px;
-    top: 453px;
+    left: 125px;
+    top: 157px;
     color: #8C8888;
 }
 
-.btn-register {
-    position: absolute;
-    width: 171px;
-    height: 35px;
-    left: 121px;
-    top: 495px;
-    background: #EAB351;
-    border-radius: 20px;
-    right: 25.73%;
-    bottom: 22.86%;
-    color: #0C0B0B;
-}
-
-.btn-register,
-.line-register {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-}
-
 .p-register {
-    width: 176px;
-    height: 21px;
+    position: absolute;
     left: 138px;
     top: 553px;
     color: #0C0B0B;
 }
 
-.facebook-register {
-    left: 160px;
-}
-
-.google-register {
-    left: 219px;
-}
-
-.facebook-register,
 .google-register {
     position: absolute;
     width: 30px;
     height: 30px;
-    top: 578px;
+    left: 190px;
+    top: 590px;
+}
+
+.back img{
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    left: 330px;
+    top: 35px;
 }
