@@ -1,4 +1,5 @@
-// import { auth } from '../firebase/config-firebase.js';
+import { auth } from '../firebase/config-firebase.js'
+
 //Función para iniciar sesion
 const login = () => {
     const viewLogin = `<form>
@@ -23,12 +24,13 @@ const login = () => {
     btnLogin.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const inputEmail = elementDiv.querySelector('#inputEmail').value;
-        const inputPassword = elementDiv.querySelector('#inputPassword').value;
+        const email = elementDiv.querySelector('#inputEmail').value;
+        const password = elementDiv.querySelector('#inputPassword').value;
 
-        // console.log(inputEmail, inputPassword);
+        // console.log(email, password);
 
-        auth.signInWithEmailAndPassword(inputEmail, inputPassword).then((userCredential) => {
+        auth.signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user;
                 // ...
@@ -44,8 +46,5 @@ const login = () => {
 
     return elementDiv;
 }
-
-// const contenedor = document.querySelector('section-container');
-
 
 export { login };
