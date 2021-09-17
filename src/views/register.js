@@ -15,12 +15,15 @@ const register = () => {
 
     const elementDiv = document.createElement('div');
     elementDiv.innerHTML = viewRegister;
+
+    const btnRegister = elementDiv.querySelector(".btn-register");
+    btnRegister.addEventListener("click", () => {
+        // e.preventDefault();
+        console.log("hola");
+    });
+
     return elementDiv;
 }
 
-// const btnRegister = viewregister.querySelector(".btn-register");
-// btnRegister.addEventListener("click", () => {
-//     // e.preventDefault();
-//     console.log("hola");
-// });
+
 export { register };

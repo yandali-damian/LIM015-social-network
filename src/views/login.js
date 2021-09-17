@@ -1,3 +1,4 @@
+// import { auth } from '../firebase/config-firebase.js';
 //Función para iniciar sesion
 const login = () => {
     const viewLogin = `<form>
@@ -17,13 +18,34 @@ const login = () => {
     const elementDiv = document.createElement('div');
     elementDiv.className = 'div-login';
     elementDiv.innerHTML = viewLogin;
+
+    const btnLogin = elementDiv.querySelector('#btnLogin');
+    btnLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const inputEmail = elementDiv.querySelector('#inputEmail').value;
+        const inputPassword = elementDiv.querySelector('#inputPassword').value;
+
+        // console.log(inputEmail, inputPassword);
+
+        auth.signInWithEmailAndPassword(inputEmail, inputPassword).then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ...
+                console.log("qwerty");
+
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
+
+    });
+
     return elementDiv;
 }
 
-// const btnLogin = document.getElementById('btnLogin');
-// btnLogin.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     console.log('hola mundo');
-// });
+// const contenedor = document.querySelector('section-container');
+
 
 export { login };
