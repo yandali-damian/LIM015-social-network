@@ -70,6 +70,17 @@ p {
     top: 624px;
 }
 
+.smsError {
+    position: absolute;
+    width: 63%;
+    height: 21px;
+    font-size: 14px;
+    line-height: 16px;
+    top: 455px;
+    left: 90px;
+    color: red;
+}
+
 .img-google {
     position: absolute;
     width: 30px;
