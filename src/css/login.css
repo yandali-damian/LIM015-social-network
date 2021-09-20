@@ -3,15 +3,17 @@
     margin: 0;
 }
 
-img {
+.img-login {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 280px;
     height: 189px;
     left: 55px;
     top: 69px;
 }
 
-.img-login {
+.img-title {
     position: absolute;
     width: 150px;
     height: 40px;
@@ -68,6 +70,17 @@ p {
     top: 624px;
 }
 
+.smsError {
+    position: absolute;
+    width: 63%;
+    height: 21px;
+    font-size: 14px;
+    line-height: 16px;
+    top: 455px;
+    left: 90px;
+    color: red;
+}
+
 .img-google {
     position: absolute;
     width: 30px;
@@ -100,4 +113,15 @@ footer {
     padding-bottom: 10px;
     font-size: 14px;
     line-height: 16px;
+}
+
+@media (max-width: 750px) {
+    .figure-img {
+        display: flex;
+        flex-direction: row;
+        width: 280px;
+        height: 189px;
+        left: 55px;
+        top: 69px;
+    }
 }

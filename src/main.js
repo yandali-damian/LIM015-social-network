@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { changeView } from './view-controler/index.js';
+import { changeView } from './view-controler/path-index.js';
 
 // myFunction();
 const init = () => {

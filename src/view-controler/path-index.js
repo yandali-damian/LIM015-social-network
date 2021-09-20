@@ -5,7 +5,7 @@ export const changeView = (route) => {
     console.log(route);
 
     const container = document.getElementById('container');
-    container.innerHTML = "";
+    container.innerHTML = ""; //Limpia en contenedor de las vistas
 
     switch (route) {
         case '':
@@ -14,7 +14,8 @@ export const changeView = (route) => {
             { return container.appendChild(components.login()) }
         case '#/register':
             { return container.appendChild(components.register()) }
-        case '':
+        case '#/home':
+            { return container.appendChild(components.home()) }
         default:
             { return container.appendChild(components.error()) }
     }
