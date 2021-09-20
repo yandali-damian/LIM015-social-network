@@ -1,72 +1,33 @@
-import { auth } from '../firebase/config-firebase.js'
-
 //Función para iniciar sesion
 const login = () => {
-    const viewLogin = `<form>
-                    <figure class="figure-img"><img class="img-login" src="./img/login.png" alt=""></figure>
-                        <section class="section-data" id="sectionData">
-                            <figure><img class="img-title" src="./img/warique.png" alt=""></figure>
-                            <input type="email" placeholder=" Email" class="input-email" id="inputEmail">
-                            <input type="password" placeholder=" Password" class="input-password" id="inputPassword">
-                            <p id="pEmail" style="color:red; top:390px; left:90px; display:none">* Ingrese su correo</p>
-                            <p id="pPassword" style="color:red; top:455px; left:90px; display:none">* Ingrese su contraseña</p>
-                            <div id="smsEP"></div>
-                            <button class="btn-login" id="btnLogin">Log in</button>
-                            <p class="p-login">O bien ingresa con ...</p>
-                            <figure>
-                                <img class="img-google" id="imgGoogle" src="./img/google.png" alt="">
+    const viewLogin = document.createElement('article');
+    viewLogin.className = 'article-login';
+    viewLogin.innerHTML = `<figure class="figure-login">
+                                <img class="img-login" src="./img/login.png" alt="login">
                             </figure>
-                            <p class="p-account">¿No tienes una cuenta?</p>
-                            <a href="#/signup" class="register" id="register">Sign in</a>
-                        </section></form>`;
-    const elementDiv = document.createElement('div');
-    elementDiv.className = 'div-login';
-    elementDiv.innerHTML = viewLogin;
+                            <article class="content">
+                                <figure class="figure-title">
+                                    <img class="img-title" src="./img/warique.png" alt="Warique" />
+                                </figure>
+                                <form action="#" class="form-login" id="formLogin">
+                                    <input type="email" placeholder="Email" class="email-login" id="inputEmail" />
+                                    <span id="pEmail" class="span-email">* Ingrese su correo</span>
+                                    <input type="password" placeholder=" Password" class="password-login" id="inputPassword" />
+                                    <span id="pPassword" class="span-password">* Ingrese su contraseña</span>
+                                    <span id="smsEP"></span>
+                                    <button class="btn-login" id="btnLogin">Iniciar Sesión</button>
+                                </form>
+                                <span class="p-login">O bien ingresa con ...</span>
+                                <figure class="figure-google">
+                                    <img class="img-google" id="imgGoogle" src="./img/google.png" alt="google" />
+                                </figure>
+                                <div>
+                                    <span class="p-account">¿No tienes una cuenta?</span>
+                                    <a href="#/signup" class="register" id="register">Regístrate</a>
+                                </div>
+                            <article>`;
 
-    const btnLogin = elementDiv.querySelector('#btnLogin');
-    const pPassword = elementDiv.querySelector('#pPassword');
-    const pEmail = elementDiv.querySelector('#pEmail');
-
-    btnLogin.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        const email = elementDiv.querySelector('#inputEmail').value;
-        const password = elementDiv.querySelector('#inputPassword').value;
-        const msg = elementDiv.querySelector('#smsEP')
-        let formValid = true;
-
-        if (email === '') {
-            pEmail.style.display = 'block';
-            msg.style.display = 'none';
-            formValid = false;
-        } else {
-            pEmail.style.display = 'none';
-        }
-
-        if (password === '') {
-            pPassword.style.display = 'block';
-            msg.style.display = 'none';
-            formValid = false;
-        } else {
-            pPassword.style.display = 'none';
-        }
-
-        if (formValid) {
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    window.location.href = '#/home';
-                })
-                .catch((error) => {
-                    msg.style.display = 'block';
-                    msg.innerHTML = `<p class="smsError">Correo electrónico/contraseña incorrecta</p>`;
-                });
-
-        }
-    });
-
-
-    return elementDiv;
+    return viewLogin;
 }
 
 export { login };
