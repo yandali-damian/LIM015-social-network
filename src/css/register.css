@@ -1,20 +1,20 @@
 .article-signup{
-    margin: 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-figure {
+.figure-title-signup {
     display: flex;
     justify-content: center;
-}
-
-.figure-title {
     margin-top: 100px;
 }
 
 .img-signup {
+    display: none;
+}
+
+.img-signup-title {
     width: 250px;
     height: 70px;
 }
@@ -64,17 +64,14 @@ figure {
 }
 
 .figure-google{
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
 }
 
 .img-google-signup {
     width: 30px;
     height: 30px;
-}
-
-div {
-    display: flex;
-    flex-direction: row;
 }
 
 .span-login{
@@ -88,4 +85,28 @@ div {
     font-size: 15px;
     line-height: 18px;
     margin: 15px auto 0 0;
+}
+
+@media (min-width: 750px) and (orientation: landscape) {
+    .article-signup {
+        display: flex;
+        flex-direction: row;
+        margin: 20px 2px 0;
+    }
+
+    .figure-signup{
+        display: flex;
+        align-items: center;
+        margin: 0 50px 0 50px;
+    }
+
+    .img-signup {
+        display: flex;
+        width: 480px;
+        height: 389px;
+    }
+
+    .content {
+        margin: auto 80px auto 0;
+    }
 }
