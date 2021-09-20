@@ -1,4 +1,5 @@
 import { components } from '../views/index.js';
+import { createAccount } from '../firebase/signup-db.js';
 
 export const changeView = (route) => {
 
@@ -12,8 +13,12 @@ export const changeView = (route) => {
         case '#':
         case '#/':
             { return container.appendChild(components.login()) }
-        case '#/register':
-            { return container.appendChild(components.register()) }
+        case '#/signup':
+            {
+                const signup =  container.appendChild(components.signup());
+                createAccount();
+                return signup;
+            }
         case '#/home':
             { return container.appendChild(components.home()) }
         default:
