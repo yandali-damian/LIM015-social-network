@@ -1,4 +1,4 @@
-import { auth } from '../firebase/config-firebase.js'
+import { auth } from '../firebase/config-firebase.js';
 
 //Función para iniciar sesion
 const login = () => {
@@ -14,7 +14,7 @@ const login = () => {
                                 <img class="img-google" src="./img/google.png" alt="">
                             </figure>
                             <p class="p-account">¿No tienes una cuenta?</p>
-                            <a href="#/register" class="register" id="register">Sign in</a>
+                            <a href="#/signup" class="register" id="register">Sign in</a>
                         </section></form>`;
     const elementDiv = document.createElement('div');
     elementDiv.className = 'div-login';

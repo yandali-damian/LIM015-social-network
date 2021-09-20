@@ -1,5 +1,4 @@
-// Este es el punto de entrada de tu aplicacion
-
+// Este es el punto de entrada a tu aplicacion
 import { changeView } from './view-controler/path-index.js';
 
 // myFunction();

@@ -1,86 +1,91 @@
-.img-register {
-    position: absolute;
-    width: 150px;
-    height: 40px;
-    left: 125px;
-    top: 89px;
+.article-signup{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.name-register,
-.email-register,
-.password-register,
-.confirm-register {
+figure {
+    display: flex;
+    justify-content: center;
+}
+
+.figure-title {
+    margin-top: 100px;
+}
+
+.img-signup {
+    width: 250px;
+    height: 70px;
+}
+
+.span-signup, .span-loginWith {
+    display: flex;
+    justify-content: center;
+}
+
+.span-signup {
+    margin-top: 50px;
+    color: #8C8888;
+    font-size: 20px;
+}
+
+.form-signup {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.name-signup,
+.email-signup,
+.password-signup,
+.confirm-signup {
     background: #FFFFFF;
     border: 1px solid #EBB54B;
     box-sizing: border-box;
     border-radius: 20px;
-    position: absolute;
     width: 257px;
     height: 35px;
-    left: 74px;
+    margin: 10px auto;
 }
 
-.name-register {
-    top: 209px;
-}
-
-.email-register {
-    top: 269px;
-}
-
-.password-register {
-    top: 329px;
-}
-
-.confirm-register {
-    top: 389px;
-}
-
-.container-div {
-    position: absolute;
-    width: 134px;
-    height: 30px;
-    top: 400px;
-    left: 92px;
-}
-
-.btn-register {
-    position: absolute;
-    width: 257px;
-    height: 35px;
-    left: 74px;
-    top: 502px;
+.btn-signup {
     background: #EAB351;
     border-radius: 20px;
     border: none;
+    width: 257px;
+    height: 35px;
+    margin: 30px auto;
 }
 
-.line-register {
-    position: absolute;
-    left: 125px;
-    top: 157px;
-    color: #8C8888;
-}
-
-.p-register {
-    position: absolute;
-    left: 138px;
-    top: 553px;
+.span-loginWith {
     color: #0C0B0B;
 }
 
-.google-register {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 190px;
-    top: 590px;
+.figure-google{
+    margin-top: 10px;
 }
 
-.back img{
-    position: absolute;
+.img-google-signup {
     width: 30px;
-    height: 20px;
-    left: 330px;
-    top: 35px;
+    height: 30px;
+}
+
+div {
+    display: flex;
+    flex-direction: row;
+}
+
+.span-login{
+    margin: 15px 4px 0 auto;
+}
+
+.a-login{
+    text-decoration: none;
+    color: #9B9595;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    margin: 15px auto 0 0;
 }
