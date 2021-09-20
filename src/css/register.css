@@ -1,25 +1,26 @@
-.article-signup{
-    margin: 0;
+.article-signup {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-figure {
+.figure-title-signup {
     display: flex;
     justify-content: center;
-}
-
-.figure-title {
     margin-top: 100px;
 }
 
 .img-signup {
+    display: none;
+}
+
+.img-signup-title {
     width: 250px;
     height: 70px;
 }
 
-.span-signup, .span-loginWith {
+.span-signup,
+.span-loginWith {
     display: flex;
     justify-content: center;
 }
@@ -50,6 +51,16 @@ figure {
     margin: 10px auto;
 }
 
+
+/*estilos para soan de validaciones*/
+
+.span-name,
+.span-confpassword {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
 .btn-signup {
     background: #EAB351;
     border-radius: 20px;
@@ -63,7 +74,9 @@ figure {
     color: #0C0B0B;
 }
 
-.figure-google{
+.figure-google {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
 }
 
@@ -72,20 +85,36 @@ figure {
     height: 30px;
 }
 
-div {
-    display: flex;
-    flex-direction: row;
-}
-
-.span-login{
+.span-login {
     margin: 15px 4px 0 auto;
 }
 
-.a-login{
+.a-login {
     text-decoration: none;
     color: #9B9595;
     font-weight: bold;
     font-size: 15px;
     line-height: 18px;
     margin: 15px auto 0 0;
+}
+
+@media (min-width: 750px) and (orientation: landscape) {
+    .article-signup {
+        display: flex;
+        flex-direction: row;
+        margin: 20px 2px 0;
+    }
+    .figure-signup {
+        display: flex;
+        align-items: center;
+        margin: 0 50px 0 50px;
+    }
+    .img-signup {
+        display: flex;
+        width: 480px;
+        height: 389px;
+    }
+    .content {
+        margin: auto 80px auto 0;
+    }
 }
