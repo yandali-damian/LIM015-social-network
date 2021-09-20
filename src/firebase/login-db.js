@@ -1,5 +1,6 @@
 import { auth } from '../firebase/config-firebase.js';
 
+//funcion para login
 const loginDB = () => {
     const formLogin = document.querySelector('#formLogin');
 
