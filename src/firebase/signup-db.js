@@ -1,4 +1,5 @@
 import { auth, db } from '../firebase/config-firebase.js';
+import { validateSignup } from '../views/validates.js'
 
 // Agregar un usuario a db
 const addUsers = (name, email, password) => {
@@ -14,69 +15,29 @@ const createAccount = () => {
 
     const formSignup = document.querySelector('#formSignup');
 
-    const alertName = document.querySelector('#pName');
-    const alertEmail = document.querySelector('#pEmail');
-    const alertPassword = document.querySelector('#pPasword');
-    const alertConfPasword = document.querySelector('#pConfPasword');
-
-    const msg = document.querySelector('#smsEP');
-
-    let formValid = true;
-
     formSignup.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = document.querySelector('#nameSignup').value;
-        const email = document.querySelector('#emailSignup').value;
-        const password = document.querySelector('#passwordSignup').value;
-        const confirmPassword = document.querySelector('#confirmSignup').value;
+        const inputName = document.querySelector('#nameSignup');
+        const inputEmail = document.querySelector('#emailSignup');
+        const inputPassword = document.querySelector('#passwordSignup');
 
-        if (name === '') {
-            alertName.style.display = 'block';
-            // msg.style.display = 'none';
-            formValid = false;
-        } else {
-            alertName.style.display = 'none';
-        }
+        const name = inputName.value;
+        const email = inputEmail.value;
+        const password = inputPassword.value;
 
-        if (email === '') {
-            alertEmail.style.display = 'block';
-            // msg.style.display = 'none';
-            formValid = false;
-        } else {
-            alertEmail.style.display = 'none';
-        }
+        validateSignup();
 
-        if (password === '') {
-            alertPassword.style.display = 'block';
-            // msg.style.display = 'none';
-            formValid = false;
-        } else {
-            alertPassword.style.display = 'none';
-        }
-
-        if (confirmPassword === '') {
-            alertConfPasword.style.display = 'block';
-            // msg.style.display = 'none';
-            formValid = false;
-        } else {
-            alertConfPasword.style.display = 'none';
-        }
-
-        if (formValid) {
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Signed in
-                    console.log('Welcome home');
-                    addUsers(name, email, password);
-                    window.location.href = '#/home';
-                })
-                .catch((error) => {
-                    // msg.style.display = 'block';
-                    // msg.classList.add('sms-ep');
-                    // msg.innerText = `Correo electrónico/contraseña incorrecta`;
-                });
-        }
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed in
+                console.log('Welcome home');
+                addUsers(name, email, password);
+                window.location.href = '#/home';
+            })
+            .catch((error) => {
+                // validatesInputs(email, 'Email ingresado es invalido', 'error')
+            });
 
     })
 }
