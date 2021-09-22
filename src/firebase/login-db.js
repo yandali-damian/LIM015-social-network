@@ -48,4 +48,28 @@ const loginDB = () => {
     })
 }
 
-export { loginDB };
+//funcion para ingresar con google
+
+const googleLogIn = () => {
+    const imgGoogle = document.querySelector('#imgGoogle');
+
+    imgGoogle.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const provider = new firebase.auth.GoogleAuthProvider();
+
+        auth.signInWithPopup(provider)
+            .then((result) => {
+                console.log('estamos en home');
+                window.location.href = '#/home';
+
+            }).catch((error) => {
+                console.log(error, 'no es correcto')
+            });
+    });
+}
+
+
+
+
+export { loginDB, googleLogIn };
