@@ -1,5 +1,6 @@
 import { auth, db } from '../firebase/config-firebase.js';
-import { validateSignup } from '../views/validates.js'
+import { validateSignup} from '../views/validates.js';
+import { googleLogin } from './google-login.js';
 
 // Agregar un usuario a db
 const addUsers = (name, email, password) => {
@@ -36,10 +37,17 @@ const createAccount = () => {
                 window.location.href = '#/home';
             })
             .catch((error) => {
-                // validatesInputs(email, 'Email ingresado es invalido', 'error')
+                console.log(error);
             });
 
     })
+
+    const imgGoogle = document.querySelector('#imgGoogle');
+
+    imgGoogle.addEventListener('click', (e) => {
+        e.preventDefault();
+        googleLogin();
+    });
 }
 
 export { createAccount };

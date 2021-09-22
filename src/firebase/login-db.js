@@ -1,4 +1,5 @@
 import { auth } from '../firebase/config-firebase.js';
+import { googleLogin } from './google-login.js';
 
 //funcion para login
 const loginDB = () => {
@@ -46,30 +47,13 @@ const loginDB = () => {
 
         }
     })
-}
 
-//funcion para ingresar con google
-
-const googleLogIn = () => {
     const imgGoogle = document.querySelector('#imgGoogle');
 
     imgGoogle.addEventListener('click', (e) => {
         e.preventDefault();
-
-        const provider = new firebase.auth.GoogleAuthProvider();
-
-        auth.signInWithPopup(provider)
-            .then((result) => {
-                console.log('estamos en home');
-                window.location.href = '#/home';
-
-            }).catch((error) => {
-                console.log(error, 'no es correcto')
-            });
+        googleLogin();
     });
 }
 
-
-
-
-export { loginDB, googleLogIn };
+export { loginDB };

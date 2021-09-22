@@ -3,7 +3,7 @@ const login = () => {
     const viewLogin = document.createElement('article');
     viewLogin.className = 'article-login';
     viewLogin.innerHTML = `<figure class="figure-login">
-                                <img class="img-login" src="./img/login.svg" alt="login">
+                                <img class="img-login" src="./img/newLogo.png" alt="login">
                             </figure>
                             <article class="content">
                                 <figure class="figure-title-login">
@@ -14,12 +14,14 @@ const login = () => {
                                         <input type="email" placeholder="Email" class="login-inputs email-login" id="inputEmail" />
                                         <i class="far fa-check-circle"></i>
                                         <i class="fas fa-exclamation-circle"></i>
+                                        <small class="msg-error"></small >
                                         <span id="pEmail" class="span-alerts span-email">* Ingrese su correo</span>
                                     </div>
                                     <div class="form-login-inputs">
                                         <input type="password" placeholder=" Password" class="login-inputs password-login" id="inputPassword" />
                                         <i class="far fa-check-circle"></i>
                                         <i class="fas fa-exclamation-circle"></i>
+                                        <small class="msg-error"></small >
                                         <span id="pPassword" class="span-alerts span-password">* Ingrese su contraseña</span>
                                     </div>
                                     <span id="smsEP"></span>
