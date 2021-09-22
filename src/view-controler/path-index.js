@@ -1,6 +1,6 @@
 import { components } from '../views/index.js';
 import { createAccount } from '../firebase/signup-db.js';
-import { loginDB } from '../firebase/login-db.js';
+import { loginDB, googleLogIn } from '../firebase/login-db.js';
 
 export const changeView = (route) => {
 
@@ -16,10 +16,12 @@ export const changeView = (route) => {
             {
                 const login = container.appendChild(components.login());
                 loginDB();
-                return login}
+                googleLogIn();
+                return login
+            }
         case '#/signup':
             {
-                const signup =  container.appendChild(components.signup());
+                const signup = container.appendChild(components.signup());
                 createAccount();
                 return signup;
             }
