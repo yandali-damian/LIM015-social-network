@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+body {
+    height: max-content;
+}
+
 /* css contenedor de toda la vista de para login - signup */
 .article-login, .article-signup{
     display: flex;
@@ -231,7 +235,7 @@ div {
 
 footer {
     border-top: 2px solid #EAB351;
-    color: grey;
+    color: #7F7C82;
     position: fixed;
     width: 100%;
     bottom: 0;
