@@ -1,4 +1,6 @@
 import { auth, db } from '../firebase/config-firebase.js';
+import { validateSignup } from '../views/validates.js';
+import { googleLogin } from './google-login.js';
 
 // Agregar un usuario a db
 const addUsers = (name, email, password) => {
@@ -17,24 +19,46 @@ const createAccount = () => {
     formSignup.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = document.querySelector('#nameSignup').value;
-        const email = document.querySelector('#emailSignup').value;
-        const password = document.querySelector('#passwordSignup').value;
-        const confirmPassword = document.querySelector('#confirmSignup').value;
+        const inputName = document.querySelector('#nameSignup');
+        const inputEmail = document.querySelector('#emailSignup');
+        const inputPassword = document.querySelector('#passwordSignup');
+        const msgAuth = document.querySelector('#smsEP');
+
+        const name = inputName.value;
+        const email = inputEmail.value;
+        const password = inputPassword.value;
+
+        validateSignup();
 
         auth.createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
+            .then(() => {
                 // Signed in
-                console.log('Welcome home');
-                addUsers(name, email, password);
-                window.location.href='#/home';
+                const user = auth.currentUser;
+                user.sendEmailVerification()
+                    .then(() => {
+
+                        addUsers(name, email, password);
+                        window.location.href = '#/home';
+                        msgAuth.style.display = 'block';
+                        msgAuth.innerHTML = 'Por favor revise su bandeja de entrada para verificar su cuenta';
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                // ..
+                console.log(error);
             });
+
     })
+
+    const imgGoogle = document.querySelector('#imgGoogle');
+
+    imgGoogle.addEventListener('click', (e) => {
+        e.preventDefault();
+        googleLogin();
+    });
 }
 
 export { createAccount };
