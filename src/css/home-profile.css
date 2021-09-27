@@ -1,4 +1,5 @@
 /* Menu para home */
+
 .header-home {
     background-color: #FCECDD;
     height: 60px;
@@ -11,11 +12,11 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    max-width: 1024px;
+    /* max-width: 1024px; */
     margin: 0 auto;
 }
 
-.nav-menu-link{
+.nav-menu-link {
     text-decoration: none;
     color: #7F7C82;
 }
@@ -60,12 +61,40 @@
     display: none;
 }
 
+
+/********************** foto de perfil ********************/
+
+.section-profile {
+    display: flex;
+    flex-direction: row;
+    margin: 70px;
+    float: left;
+}
+
+.section-photo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-radius: 8px;
+}
+
+.photo-profile {
+    border-radius: 50%;
+    width: 50px;
+}
+
+.div-profile {
+    display: flex;
+    margin-left: 5px;
+    font-size: 23px;
+    align-items: center;
+}
+
 @media (max-width: 768px) {
     .title {
         padding: 10px 20px;
         width: 140px;
     }
-
     .nav-menu {
         flex-direction: column;
         align-items: center;
@@ -78,31 +107,24 @@
         padding: 10px 0 0;
         left: 100%;
         transition: left 0.3s;
-
         overflow-y: auto;
-
         /* height: calc(100% - 50px) */
     }
-
     .nav-menu-item {
         font-size: 18px;
         line-height: 60px;
     }
-
     .nav-menu-link {
         color: #FCECDD;
     }
-
     .nav-menu-link:hover {
         background: none;
         color: #FEA82F;
         transition: 0.3s;
     }
-
     .nav-toggle {
         display: block;
     }
-
     .nav-menu_visibily {
         left: 0;
     }

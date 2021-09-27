@@ -1,5 +1,5 @@
 import { auth, db } from '../firebase/config-firebase.js';
-import { validateSignup} from '../views/validates.js';
+import { validateSignup } from '../views/validates.js';
 import { googleLogin } from './google-login.js';
 
 // Agregar un usuario a db
@@ -22,6 +22,7 @@ const createAccount = () => {
         const inputName = document.querySelector('#nameSignup');
         const inputEmail = document.querySelector('#emailSignup');
         const inputPassword = document.querySelector('#passwordSignup');
+        const msgAuth = document.querySelector('#smsEP');
 
         const name = inputName.value;
         const email = inputEmail.value;
@@ -30,11 +31,21 @@ const createAccount = () => {
         validateSignup();
 
         auth.createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
+            .then(() => {
                 // Signed in
-                console.log('Welcome home');
-                addUsers(name, email, password);
-                window.location.href = '#/home';
+                const user = auth.currentUser;
+                user.sendEmailVerification()
+                    .then(() => {
+
+                        addUsers(name, email, password);
+                        window.location.href = '#/home';
+                        msgAuth.style.display = 'block';
+                        msgAuth.innerHTML = 'Por favor revise su bandeja de entrada para verificar su cuenta';
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    })
+
             })
             .catch((error) => {
                 console.log(error);
