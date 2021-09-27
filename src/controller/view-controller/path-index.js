@@ -1,8 +1,9 @@
-import { components } from '../views/index.js';
-import { createAccount } from '../firebase/signup-db.js';
-import { loginDB } from '../firebase/login-db.js';
-import { profile } from '../views/profile.js';
-import { infoUsers } from '../firebase/profile-home.js';
+import { components } from '../../views/index.js';
+import { createAccount } from '../signup.js';
+import { loginDB } from '../login.js';
+import { profile } from '../../views/profile.js';
+
+// import { infoUsers } from '../firebase/profile-home.js.js';
 
 export const changeView = (route) => {
 
