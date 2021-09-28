@@ -18,9 +18,9 @@ export const createAccount = () => {
         const msgAuth = document.querySelector('#smsEP');
         msgAuth.classList.add('sms-ep');
 
-        if (password === '' || password2 === '') {
+        if (name == '' || email == '' || password == '' || password2 == '') {
             msgAuth.style.display = 'block';
-            msgAuth.innerText = 'Las contraseñas son requeridas.';
+            msgAuth.innerText = 'Completar todos los campos';
             return;
         } else if (password !== password2) {
             msgAuth.style.display = 'block';
@@ -62,14 +62,8 @@ export const createAccount = () => {
                     case 'auth/email-already-in-use':
                         msgAuth.innerText = 'El email ya está registrado.';
                         break;
-                    case 'auth/weak-password':
-                        msgAuth.innerText = 'Ingresar una contraseña mayor a 6 dígitos';
-                        break;
-                    case 'auth/internal-error':
-                        msgAuth.innerText = 'Ingresar una contraseña';
-                        break;
                     default:
-                        msgAuth.innerText = 'Completar los campos';
+                        msgAuth.innerText = 'Ingresar una contraseña mayor a 6 dígitos';
                         break;
                 }
             });
