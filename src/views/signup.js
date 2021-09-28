@@ -46,6 +46,11 @@ const signup = () => {
                                     <span class="span-account">¿Ya tienes cuenta?</span>
                                     <a href="#/" class="a-login-signup" id="aLogin">Iniciar sesión</a>
                                 </div>
+                                <section id="modal" class='modal-dialog'>
+                                    <section><a href="#/" class='close'>X</a>
+                                        <span id="alertVerify" class="alert"></span>
+                                    </section>
+                                </section>
                             </article>`;
 
     return viewSignup;

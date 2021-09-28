@@ -11,12 +11,10 @@ const profile = () => {
     console.log(defaultUser);
 
     //perfil de usuario
-    viewProfile.innerHTML = `
-        <section id='sectionPhoto' class='section-photo'>
-            <img src='' id='photoProfile' class='photo-profile'/>
-            <div id='divProfile' class='div-profile'></div>
-        </section>
-    `;
+    viewProfile.innerHTML = ` <section id='sectionPhoto' class='section-photo'>
+                                    <img src='' id='photoProfile' class='photo-profile'/>
+                                    <div id='divProfile' class='div-profile'></div>
+                                </section>`;
 
     // se recupera datos ingresados con gmail
     const divProfile = document.querySelector('#divProfile');
