@@ -11,7 +11,6 @@ export const googleSignUp = () => {
 
                 console.log(getInfo());
                 console.log(result.user);
-                // console.log('estamos en home');
                 window.location.href = '#/home';
                 localStorage.setItem('user', result.user.displayName);
                 localStorage.setItem('photo', result.user.photoURL)
