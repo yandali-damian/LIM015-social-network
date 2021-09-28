@@ -1,4 +1,5 @@
 // funcion para mostrar el home
+import { auth } from '../firebase/config-firebase.js'
 const home = () => {
     const viewHome = document.createElement('section');
     viewHome.innerHTML = `<header class="header-home" id="headerHome">
@@ -13,17 +14,19 @@ const home = () => {
                                     </button>
                                     <ul class="nav-menu" id="navMenu">
                                         <li class="nav-menu-item">
-                                            <a href="#/Home" class="nav-menu-link">Inicio</a>
+                                            <a href="#/home" class="nav-menu-link">Inicio</a>
                                         </li>
                                         <li class="nav-menu-item">
-                                            <a href="#/Profile" class="nav-menu-link">Perfil</a>
+                                            <a href="#/profile" class="nav-menu-link">Perfil</a>
                                         </li>
                                         <li class="nav-menu-item">
-                                            <a href="#/Signout" class="nav-menu-link">Cerrar sesión</a>
+                                            <a href="#/signout" class="nav-menu-link">Cerrar sesión</a>
                                         </li>
                                     </ul>
                                 </nav>
                             </header>
+                            <section id="sectionProfile" class="section-profile">
+                            </section>
                             <footer>
                                 <p>&copy; 2021 - Developed by Grecia &amp; Yandali</p>
                             </footer>`;
@@ -35,6 +38,7 @@ const home = () => {
         navMenu.classList.toggle('nav-menu_visibily');
     });
 
+    console.log(auth.currentUser);
     return viewHome;
 }
 
