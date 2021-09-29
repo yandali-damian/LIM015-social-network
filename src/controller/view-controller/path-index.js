@@ -41,6 +41,7 @@ export const changeView = (route) => {
                         window.location.hash = '#/';
                     }
                 });
+                break;
             }
         case '#/signout':
             {
