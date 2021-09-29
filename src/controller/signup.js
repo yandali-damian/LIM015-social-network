@@ -1,5 +1,5 @@
 import { googleSignUp } from './google-signup.js';
-import { createUserBD } from '../firebase/signup-db.js';
+import { addUsers, createUserBD, currentUser } from '../firebase/signup-db.js';
 import { auth } from '../firebase/config-firebase.js'
 
 // Registar una cuenta y guardarlo en la db
@@ -15,6 +15,8 @@ export const createAccount = () => {
         const password = document.querySelector('#passwordSignup').value;
         const password2 = document.querySelector('#confirmSignup').value;
 
+        const modal = document.querySelector('#modal');
+        const alertVerify = document.querySelector('#alertVerify')
         const msgAuth = document.querySelector('#smsEP');
         msgAuth.classList.add('sms-ep');
 
@@ -30,26 +32,21 @@ export const createAccount = () => {
 
         // Create user
         createUserBD(email, password)
-            .then((authenticate) => {
-                console.log(authenticate);
+            .then((response) => {
                 // Signed in
-                const user = auth.currentUser;
-                user.sendEmailVerification()
-                    .then(() => {
-                        //addUsers(name, email);
-                        user.updateProfile({
-                                displayName: name,
-                                photoURL: 'https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b'
-                            })
-                            .then(() => {
-                                alert('Por favor revise su bandeja de entrada para verificar su cuenta');
-                                formSignup.reset();
-                            });
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    })
-
+                currentUser().updateProfile({
+                    displayName: name,
+                    photoURL: 'https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b'
+                }).then(() => {
+                }).catch((error) => {
+                    console.log(error);
+                })
+                addUsers(response.user.uid, name);
+            })
+            .then(() => {
+                modal.style.display = 'block';
+                alertVerify.innerText = 'Por favor revise su bandeja de entrada para verificar su cuenta';
+                currentUser().sendEmailVerification();
             })
             .catch((error) => {
 

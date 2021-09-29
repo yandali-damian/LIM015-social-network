@@ -248,224 +248,78 @@ footer p {
     padding: 0;
 }
 
-/* Media query para desktop */
-@media (min-width: 1600px) and (max-width: 2000px) {
-    .article-login, .article-signup{
-        display: flex;
-        flex-direction: row;
-        min-height: 100vh;
-    }
-
-    .content{
-        width: 100%;
-        margin-left: -120px;
-    }
-
-    .figure-login, .figure-signup{
-        margin: 100px;
-    }
-
-    .img-login, .img-signup {
-        width: 700px;
-        height: 680px;
-    }
-
-    .img-signup {
-        display: block;
-    }
-
-    .img-title {
-        width: 450px;
-        height: 130px;
-        padding: 10px;
-    }
-
-    .span-signup {
-        margin-top: 30px;
-        color: #8C8888;
-        font-size: 35px;
-    }
-
-    .form-login{
-        margin-top: 20px;
-    }
-
-    .form-signup{
-        margin-top: 30px;
-    }
-
-    .login-inputs, .btn-login,
-    .signup-inputs, .btn-signup {
-        font-size: 30px;
-        width: 400px;
-        height: 60px;
-        line-height: 60px;
-        border-radius: 30px;
-    }
-
-    .btn-login, .btn-signup {
-        width: 420px;
-    }
-
-    .span-loginWith, .span-account, .a-login-signup{
-        font-size: 30px;
-        line-height: 30px;
-        margin-top: 35px;
-    }
-
-    .img-google {
-        width: 30px;
-        height: 30px;
-    }
+/* The Modal (background) */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Media query para laptop */
-@media (min-width: 1280px) and (max-width: 1599px) {
-    .article-login, .article-signup{
-        display: flex;
-        flex-direction: row;
-        min-height: 100vh;
-    }
-
-    .content{
-        width: 100%;
-        margin-left: -120px;
-    }
-
-    .figure-login, .figure-signup{
-        margin: 100px;
-    }
-
-    .img-login, .img-signup {
-        width: 500px;
-        height: 480px;
-    }
-
-    .img-signup {
-        display: block;
-    }
-
-    .img-title {
-        width: 360px;
-        height:100px;
-        padding: 10px;
-    }
-
-    .span-signup {
-        margin-top: 30px;
-        color: #8C8888;
-        font-size: 30px;
-    }
-
-    .form-login, .form-signup {
-        margin-top: 20px;
-    }
-
-    .login-inputs, .btn-login,
-    .signup-inputs, .btn-signup {
-        font-size: 25px;
-        width: 350px;
-        height: 50px;
-        line-height: 50px;
-        border-radius: 30px;
-    }
-
-    .btn-login {
-        width: 370px;
-    }
-
-    .btn-signup {
-        width: 380px;
-    }
-
-    .span-loginWith, .span-account, .a-login-signup{
-        font-size: 25px;
-        line-height: 25px;
-        margin-top: 25px;
-    }
-
-    .img-google {
-        width: 30px;
-        height: 30px;
-    }
+.modal-dialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    display: none;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: block;
 }
 
-/* Media query para tablet */
-@media (min-width: 768px) and (max-width: 1279px) {
-    .article-login {
-        min-height: 90vh;
-    }
-
-    .article-signup {
-        min-height: 70vh;
-    }
-
-    .content {
-        width: 100%;
-    }
-
-    .figure-login {
-        margin: 0;
-    }
-
-    .img-login {
-        width: 350px;
-        height: 320px;
-    }
-
-    .figure-title-signup {
-        margin-top: 100px;
-    }
-
-    .img-title {
-        width: 300px;
-        height:80px;
-    }
-
-    .span-signup {
-        margin-top: 30px;
-        color: #8C8888;
-        font-size: 30px;
-    }
-
-    .form-login{
-        margin-top: 20px;
-    }
-
-    .form-signup{
-        margin-top: 30px;
-    }
-
-    .login-inputs, .btn-login,
-    .signup-inputs, .btn-signup {
-        font-size: 25px;
-        width: 320px;
-        height: 50px;
-        line-height: 50px;
-        border-radius: 30px;
-    }
-
-    .signup-inputs, .btn-signup{
-        width: 370px;
-    }
-
-    .btn-login {
-        width: 340px;
-    }
-
-    .btn-signup {
-        width: 390px;
-        margin: 20px auto;
-    }
-
-    .span-loginWith, .span-account, .a-login-signup {
-        font-size: 25px;
-        line-height: 25px;
-        margin-top: 20px;
-    }
-
-    .img-google {
-        width: 30px;
-        height: 30px;
-    }
+.modal-dialog:target {
+    display: block;
+    pointer-events: auto;
 }
+
+.modal-dialog > section {
+    max-width: 600px;
+    width: 80%;
+    position: relative;
+    margin: 20% auto;
+    padding: 50px 5px;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.close {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffae88;
+    color: #fff;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 34px;
+    height: 34px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    padding-top: 5px;
+}
+
+.close:hover {
+    background: #fe2f2f;
+}
+
+.alert {
+    font-size: 18px;
+    margin: 20px;
+}
+/* end modal */

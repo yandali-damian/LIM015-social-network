@@ -1,5 +1,7 @@
 import { lognin } from '../firebase/login-db.js';
+import { currentUser } from '../firebase/signup-db.js';
 import { googleSignUp } from './google-signup.js';
+// import { auth } from '../firebase/config-firebase.js';
 
 //funcion para login
 const loginDB = () => {
@@ -16,7 +18,7 @@ const loginDB = () => {
         lognin(email, password)
             .then((response) => {
                 console.log(response);
-                if (response.user.emailVerified) {
+                if (currentUser().emailVerified === true) {
                     window.location.href = '#/home';
                 } else {
                     msg.style.display = 'block';
@@ -53,10 +55,7 @@ const loginDB = () => {
 
                 }
             });
-
-
     })
-
     googleSignUp();
 }
 
