@@ -1,20 +1,20 @@
 import { auth, db } from '../firebase/config-firebase.js';
 
 // Agregar un usuario a db
-// export const addUsers = (name, email) => {
-//     db.collection('users').doc().set({
-//         name,
-//         email
-//     });
-// }
+export const addUsers = (uid, name) => {
+    return db.collection('users').doc(uid).set({
+        uid,
+        name,
+    });
+}
 
 export const createUserBD = (email, password) => {
     return auth.createUserWithEmailAndPassword(email, password);
 };
 
-export const getInfo = () => auth.currentUser;
+export const currentUser = () => auth.currentUser;
 
 //Cerrar Sesion
 export const signout = () => {
-    return auth.signOut(); // Eliminar el usuario auntentificado
+    return auth.signOut(); // Cerrar  sesion al usuario auntentificado
 }

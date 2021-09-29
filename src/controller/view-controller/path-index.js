@@ -5,8 +5,6 @@ import { profile } from '../../views/profile.js';
 import { signout } from '../../firebase/signup-db.js';
 import { auth } from '../../firebase/config-firebase.js';
 
-// import { infoUsers } from '../firebase/profile-home.js.js';
-
 export const changeView = (route) => {
 
     console.log(route);
@@ -19,33 +17,30 @@ export const changeView = (route) => {
         case '#':
         case '#/':
             {
-                if (auth.currentUser) {
-                    window.location.hash = '#/home';
-                } else {
-                    const login = container.appendChild(components.login()); // Diseño Vista Login
-                    loginDB(); //Eventos Vista Login
-                    return login;
-                }
+                const login = container.appendChild(components.login()); // Diseño Vista Login
+                loginDB(); //Eventos Vista Login
+                return login;
             }
         case '#/signup':
             {
-                if (auth.currentUser) {
-                    window.location.hash = '#/home';
-                } else {
-                    const signup = container.appendChild(components.signup()); // Diseño Vista Registrarse
-                    createAccount(); //Eventos Vista Registrarse
-                    return signup;
-                }
+                const signup = container.appendChild(components.signup()); // Diseño Vista Registrarse
+                createAccount(); //Eventos Vista Registrarse
+                return signup;
             }
         case '#/home':
             {
-                if (auth.currentUser) {
-                    const home = container.appendChild(components.home());
-                    profile();
-                    return home;
-                } else {
-                    window.location.hash = '#/';
-                }
+                auth.onAuthStateChanged((user) => {
+                    console.log(user);
+                    if (user) {
+                        console.log('log in: ' + user);
+                        const home = container.appendChild(components.home());
+                        profile();
+                        return home;
+                    } else {
+                        console.log('log out ');
+                        window.location.hash = '#/';
+                    }
+                });
             }
         case '#/signout':
             {
