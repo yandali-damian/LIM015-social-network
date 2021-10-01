@@ -1,6 +1,6 @@
 import { googleSignUp } from './google-signup.js';
 import { addUsers, createUserBD, currentUser } from '../firebase/signup-db.js';
-import { auth } from '../firebase/config-firebase.js'
+// import { auth } from '../firebase/config-firebase.js'
 
 // Registar una cuenta y guardarlo en la db
 export const createAccount = () => {
@@ -33,15 +33,19 @@ export const createAccount = () => {
         // Create user
         createUserBD(email, password)
             .then((response) => {
+                const photoURLDefault = 'https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b';
                 // Signed in
                 currentUser().updateProfile({
                     displayName: name,
-                    photoURL: 'https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b'
+                    photoURL: photoURLDefault
                 }).then(() => {
+                    // console.log(currentUser().photoURL);
                 }).catch((error) => {
                     console.log(error);
                 })
-                addUsers(response.user.uid, name);
+                addUsers(response.user.uid, name, photoURLDefault);
+
+                // console.log('https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b');
             })
             .then(() => {
                 modal.style.display = 'block';
@@ -52,9 +56,9 @@ export const createAccount = () => {
 
                 msgAuth.style.display = 'block';
 
-                const errCode = error.code;
-                const errMessage = error.message;
-                console.log(error);
+                // const errCode = error.code;
+                // const errMessage = error.message;
+                // console.log(error);
                 switch (error.code) {
                     case 'auth/email-already-in-use':
                         msgAuth.innerText = 'El email ya está registrado.';

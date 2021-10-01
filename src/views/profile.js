@@ -8,16 +8,49 @@ const profile = () => {
         photoURL: '../img/user.png'
     }
 
-    console.log(defaultUser);
+    // console.log(defaultUser);
 
     //perfil de usuario
-    viewProfile.innerHTML = ` <section id='sectionPhoto' class='section-photo'>
+    viewProfile.innerHTML = `
+                            <article id="articleProfile" class="article-profile">
+                                
+                                <figure>
                                     <img src='' id='photoProfile' class='photo-profile'/>
-                                    <div id='divProfile' class='div-profile'></div>
-                                </section>`;
+                                </figure>
+
+                                <div id='divName' class='div-name'>
+                                    <h3 id="nameProfile"></h3>
+                                    <button id="btnEdit" class="btn-edit">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </button>
+                                </div>
+
+                            </article>
+
+                            <article id="articlePost" class="article-post">
+
+                                <section id="sectionModalPost" class="section-modal-post">
+                                    <input placeholder="¿Dónde te fuiste a comer?" class="input-post" id="inputPost">
+                                </section>
+
+                                <div id="iconPost" class="icon-post">
+                                    <span><i class="fas fa-images"></i></span>
+                                    <span><i class="fas fa-video"></i></span>
+                                </div>
+
+                                <section class="section-modal-post" id=sectionModalPost>
+                                
+                                </section>
+
+                                <section class="section-post" id=sectionPost>
+                                
+                                </section>
+
+                            </article>
+                            `;
 
     // se recupera datos ingresados con gmail
-    const divProfile = document.querySelector('#divProfile');
+    const divProfile = document.querySelector('#nameProfile');
     divProfile.innerText = userData.displayName;
 
     const photoProfile = document.querySelector('#photoProfile');
