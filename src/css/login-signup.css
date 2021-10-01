@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
 * {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
@@ -16,7 +18,6 @@ body {
     min-height: 80vh;
     margin: 0;
 }
-/*  */
 
 /* css para contendor de title y formulario */
 .content {
@@ -28,7 +29,6 @@ body {
     max-width: 100%;
     padding-bottom: 10px;
 }
-/*  */
 
 /* css para logo de login - signup*/
 .figure-login{
@@ -45,7 +45,6 @@ body {
 .img-signup {
     display: none;
 }
-/*  */
 
 /* css para title login - signup */
 .figure-title-login, .figure-title-signup{
@@ -65,7 +64,6 @@ body {
     width: 150px;
     height: 40px;
 }
-/*  */
 
 /* css ----- Registrate ----- */
 .span-signup {
@@ -75,7 +73,6 @@ body {
     color: #8C8888;
     font-size: 20px;
 }
-/*  */
 
 /* css para formularios login - signup */
 .form-login, .form-signup{
@@ -91,7 +88,6 @@ body {
 .form-signup {
     margin-top: 25px;
 }
-/*  */
 
 /* css para contenedor de input, icon, small de login - signup */
 .form-login-inputs, .form-signup-inputs {
@@ -99,7 +95,6 @@ body {
     margin-bottom: 10px;
     padding-bottom: 20px;
 }
-/*  */
 
 /* css para inputs login - signup */
 .login-inputs, .signup-inputs{
@@ -125,7 +120,6 @@ body {
     outline: 0;
     border: 2px solid #FEA82F;
 }
-/*  */
 
 /* css de validaciones */
 .form-login-inputs i {
@@ -154,7 +148,6 @@ body {
     left: 0;
     visibility: hidden;
 }
-/*  */
 
 .form-login-inputs.error .span-alerts {
     visibility: visible;
@@ -165,7 +158,6 @@ body {
     font-size: 14px;
     line-height: 16px;
 }
-/*  */
 
 /* css para boton de login - sign up */
 .btn-login, .btn-signup {
@@ -191,8 +183,6 @@ body {
 .btn-signup:hover, .btn-login:hover {
     background: #FEA82F;
 }
-
-/*  */
 
 .span-loginWith, .span-account, .a-login-signup{
     margin-top: 10px;
