@@ -66,28 +66,85 @@
 
 .section-profile {
     display: flex;
-    flex-direction: row;
-    margin: 70px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    margin: 60px auto;
     float: left;
-}
-
-.section-photo {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    border-radius: 8px;
 }
 
 .photo-profile {
     border-radius: 50%;
-    width: 50px;
+    width: 150px;
 }
 
-.div-profile {
-    display: flex;
+.div-name {
     margin-left: 5px;
     font-size: 23px;
+}
+
+
+/* *******************Editar foto de perfil********************** */
+
+.btn-edit {
+    border: none;
+    background-color: white;
+    margin-left: 6px;
+}
+
+.fa-pencil-alt {
+    color: rgb(83 82 100);
+}
+
+
+/* *******************post********************** */
+
+.input-post {
+    border: 1px solid #FFC288;
+    border-radius: 30px;
+    display: block;
+    font-size: 18px;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-top-width: 3px;
+    outline: none;
+}
+
+.article-post {
+    background-color: rgb(255 255 255 / 97%);
+    margin: 15px;
+}
+
+.icon-post {
+    /* display: flex;
+    flex-direction: row; */
+    justify-content: space-around;
+}
+
+.section-modal-post {
+    margin-bottom: 15px;
+}
+
+.fa-images {
+    color: #0DB83D;
+}
+
+.fa-video {
+    color: #FF0F00;
+}
+
+
+/* .section-profile {} */
+
+.article-profile {
+    display: flex;
     align-items: center;
+    background-color: rgb(255 255 255 / 97%);
+    margin: 30px;
+    flex-direction: column;
 }
 
 @media (max-width: 768px) {
@@ -108,7 +165,6 @@
         left: 100%;
         transition: left 0.3s;
         overflow-y: auto;
-        /* height: calc(100% - 50px) */
     }
     .nav-menu-item {
         font-size: 18px;
