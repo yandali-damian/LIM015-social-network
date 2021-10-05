@@ -34,6 +34,7 @@ export const createAccount = () => {
         createUserBD(email, password)
             .then((response) => {
                 const photoURLDefault = 'https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b';
+
                 // Signed in
                 currentUser().updateProfile({
                     displayName: name,
@@ -44,7 +45,6 @@ export const createAccount = () => {
                     console.log(error);
                 })
                 addUsers(response.user.uid, name, photoURLDefault);
-
                 // console.log('https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b');
             })
             .then(() => {
@@ -68,8 +68,6 @@ export const createAccount = () => {
                         break;
                 }
             });
-
     })
-
     googleSignUp();
 }

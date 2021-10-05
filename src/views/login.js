@@ -36,7 +36,6 @@ const login = () => {
                                     <a href="#/signup" class="a-login-signup" id="register">Regístrate</a>
                                 </div>
                             <article>`;
-
     return viewLogin;
 }
 

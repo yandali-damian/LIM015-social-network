@@ -97,7 +97,7 @@
 
 /* *******************post********************** */
 
-.input-post {
+.btn-post {
     border: 1px solid #FFC288;
     border-radius: 30px;
     display: block;
@@ -108,6 +108,7 @@
     padding: 0 10px;
     border-top-width: 3px;
     outline: none;
+    cursor: pointer;
 }
 
 .article-post {
@@ -121,21 +122,15 @@
     justify-content: space-around;
 }
 
-.section-modal-post {
+.section-btn-post {
     margin-bottom: 15px;
 }
 
-.fa-images {
+.fa-photo-video {
     color: #0DB83D;
 }
 
-.fa-video {
-    color: #FF0F00;
-}
-
-
 /* .section-profile {} */
-
 .article-profile {
     display: flex;
     align-items: center;
@@ -144,40 +139,52 @@
     flex-direction: column;
 }
 
-@media (max-width: 768px) {
-    .title {
-        padding: 10px 20px;
-        width: 140px;
-    }
-    .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        margin-right: 20px;
-        background-color: #4A403A;
-        position: fixed;
-        top: 50px;
-        width: 100%;
-        padding: 10px 0 0;
-        left: 100%;
-        transition: left 0.3s;
-        overflow-y: auto;
-    }
-    .nav-menu-item {
-        font-size: 18px;
-        line-height: 60px;
-    }
-    .nav-menu-link {
-        color: #FCECDD;
-    }
-    .nav-menu-link:hover {
-        background: none;
-        color: #FEA82F;
-        transition: 0.3s;
-    }
-    .nav-toggle {
-        display: block;
-    }
-    .nav-menu_visibily {
-        left: 0;
-    }
+/* Css de modal post */
+.section-modal-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* height: calc(100% - 100px); */
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-post {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #FFC288;
+}
+
+.show-modal {
+    opacity: 1;
+}
+
+.modal-post h2 {
+    text-align: center;
+}
+
+.input-post {
+    border: none;
+    width: 100%;
+    height: 200px;
+    outline: 0;
+}
+
+.btn-publicar, #btnClose {
+    background: #EAB351;
+    border-radius: 10px;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    cursor: pointer;
 }

@@ -9,8 +9,8 @@ export const googleSignUp = () => {
         lognInWithGoogle()
             .then((result) => {
 
-                console.log(currentUser());
-                console.log(result.user);
+                // console.log(currentUser());
+                // console.log(result.user);
                 window.location.href = '#/home';
                 localStorage.setItem('user', result.user.displayName);
                 localStorage.setItem('photo', result.user.photoURL)

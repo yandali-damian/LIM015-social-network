@@ -1,13 +1,17 @@
-import { components } from '../../views/index.js';
-import { createAccount } from '../signup.js';
-import { loginDB } from '../login.js';
-import { profile } from '../../views/profile.js';
-import { signout } from '../../firebase/signup-db.js';
+// importar firebase
 import { auth } from '../../firebase/config-firebase.js';
+import { signout } from '../../firebase/signup-db.js';
+
+// importar vistas
+import { components } from '../../views/index.js';
+import { profile } from '../../views/profile.js';
+// import { modalPost } from '../../views/modal.js';
+
+import { loginDB } from '../login.js';
+import { createAccount } from '../signup.js';
+import { post } from '../post.js';
 
 export const changeView = (route) => {
-
-    console.log(route);
 
     const container = document.getElementById('container');
     container.innerHTML = ""; //Limpia en contenedor de las vistas
@@ -30,14 +34,12 @@ export const changeView = (route) => {
         case '#/home':
             {
                 auth.onAuthStateChanged((user) => {
-                    console.log(user);
                     if (user) {
-                        console.log('log in: ' + user);
                         const home = container.appendChild(components.home());
                         profile();
+                        post();
                         return home;
                     } else {
-                        console.log('log out ');
                         window.location.hash = '#/';
                     }
                 });
