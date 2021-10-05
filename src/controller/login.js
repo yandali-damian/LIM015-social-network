@@ -17,7 +17,7 @@ const loginDB = () => {
 
         lognin(email, password)
             .then((response) => {
-                console.log(response);
+                //console.log(response);
                 if (currentUser().emailVerified === true) {
                     window.location.href = '#/home';
                 } else {
@@ -52,7 +52,6 @@ const loginDB = () => {
                     default:
                         msg.innerText = 'Los datos ingresados son incorrectos, vuelve a ingresarlos';
                         break;
-
                 }
             });
     })

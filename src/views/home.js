@@ -25,8 +25,8 @@ const home = () => {
                                     </ul>
                                 </nav>
                             </header>
-                            <section id="sectionProfile" class="section-profile">
-                            </section>
+                            <section id="sectionProfile" class="section-profile"></section>
+                            <section id="sectionModalPost" class="section-modal-post"></section>
                             <footer>
                                 <p>&copy; 2021 - Developed by Grecia &amp; Yandali</p>
                             </footer>`;
@@ -38,7 +38,6 @@ const home = () => {
         navMenu.classList.toggle('nav-menu_visibily');
     });
 
-    console.log(auth.currentUser);
     return viewHome;
 }
 

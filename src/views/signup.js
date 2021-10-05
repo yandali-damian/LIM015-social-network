@@ -13,26 +13,18 @@ const signup = () => {
                                 <form action="#" class="form-signup" id="formSignup">
                                     <div class="form-signup-inputs">
                                         <input type="text" class="signup-inputs" id="nameSignup" placeholder="Name" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <div class="form-signup-inputs">
                                         <input type="email" class="signup-inputs" id="emailSignup" placeholder="Email" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <div class="form-signup-inputs">
                                         <input type="password" class="signup-inputs" id="passwordSignup" placeholder="Password" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <div class="form-signup-inputs">
                                         <input type="password" class="signup-inputs" id="confirmSignup" placeholder="Confirm Password" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <span id="smsEP" class="msg-EP"><i class="fas fa-exclamation-triangle"></i></span>
@@ -52,7 +44,6 @@ const signup = () => {
                                     </section>
                                 </section>
                             </article>`;
-
     return viewSignup;
 }
 

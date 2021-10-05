@@ -219,3 +219,42 @@
         height: 30px;
     }
 }
+
+/* Barra de navegación */
+@media (max-width: 768px) {
+    .title {
+        padding: 10px 20px;
+        width: 140px;
+    }
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        background-color: #4A403A;
+        position: fixed;
+        top: 50px;
+        width: 100%;
+        padding: 10px 0 0;
+        left: 100%;
+        transition: left 0.3s;
+        overflow-y: auto;
+    }
+    .nav-menu-item {
+        font-size: 18px;
+        line-height: 60px;
+    }
+    .nav-menu-link {
+        color: #FCECDD;
+    }
+    .nav-menu-link:hover {
+        background: none;
+        color: #FEA82F;
+        transition: 0.3s;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    .nav-menu_visibily {
+        left: 0;
+    }
+}
