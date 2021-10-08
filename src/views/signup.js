@@ -1,5 +1,5 @@
 // Función para registrar un usuario
-const signup = () => {
+export const signup = () => {
     const viewSignup = document.createElement('article');
     viewSignup.className = 'article-signup';
     viewSignup.innerHTML = `<figure class="figure-signup">
@@ -38,13 +38,6 @@ const signup = () => {
                                     <span class="span-account">¿Ya tienes cuenta?</span>
                                     <a href="#/" class="a-login-signup" id="aLogin">Iniciar sesión</a>
                                 </div>
-                                <section id="modal" class='modal-dialog'>
-                                    <section><a href="#/" class='close'>X</a>
-                                        <span id="alertVerify" class="alert"></span>
-                                    </section>
-                                </section>
                             </article>`;
     return viewSignup;
 }
-
-export { signup };

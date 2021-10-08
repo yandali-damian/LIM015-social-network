@@ -1,14 +1,12 @@
 // importar firebase
 import { auth } from '../../firebase/config-firebase.js';
-import { signout } from '../../firebase/signup-db.js';
+import { signOut } from '../../firebase/fb-auth.js';
 
 // importar vistas
 import { components } from '../../views/index.js';
-import { profile } from '../../views/profile.js';
-// import { modalPost } from '../../views/modal.js';
 
 import { loginDB } from '../login.js';
-import { createAccount } from '../signup.js';
+import { signupDB } from '../signup.js';
 import { post } from '../post.js';
 
 export const changeView = (route) => {
@@ -28,7 +26,7 @@ export const changeView = (route) => {
         case '#/signup':
             {
                 const signup = container.appendChild(components.signup()); // Diseño Vista Registrarse
-                createAccount(); //Eventos Vista Registrarse
+                signupDB(); //Eventos Vista Registrarse
                 return signup;
             }
         case '#/home':
@@ -36,7 +34,6 @@ export const changeView = (route) => {
                 auth.onAuthStateChanged((user) => {
                     if (user) {
                         const home = container.appendChild(components.home());
-                        profile();
                         post();
                         return home;
                     } else {
@@ -47,7 +44,7 @@ export const changeView = (route) => {
             }
         case '#/signout':
             {
-                signout().then(() => {
+                signOut().then(() => {
                     window.location.hash = '#/';
                 });
             }
