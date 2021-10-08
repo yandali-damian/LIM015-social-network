@@ -1,5 +1,5 @@
 //Función para iniciar sesion
-const login = () => {
+export const login = () => {
     const viewLogin = document.createElement('article');
     viewLogin.className = 'article-login';
     viewLogin.innerHTML = `<figure class="figure-login">
@@ -38,5 +38,3 @@ const login = () => {
                             <article>`;
     return viewLogin;
 }
-
-export { login };

@@ -6,4 +6,5 @@ const init = () => {
     changeView(window.location.hash);
     window.addEventListener('hashchange', () => changeView(window.location.hash)); // detectar cambios de la URL
 }
+
 window.addEventListener('load', init);

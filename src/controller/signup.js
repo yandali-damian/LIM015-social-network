@@ -1,9 +1,9 @@
+import { createUserBD, currentUser } from '../firebase/fb-auth.js';
+import { addUsers } from '../firebase/fb-firestore.js';
 import { googleSignUp } from './google-signup.js';
-import { addUsers, createUserBD, currentUser } from '../firebase/signup-db.js';
-// import { auth } from '../firebase/config-firebase.js'
 
 // Registar una cuenta y guardarlo en la db
-export const createAccount = () => {
+export const signupDB = () => {
 
     const formSignup = document.querySelector('#formSignup');
 
@@ -15,8 +15,6 @@ export const createAccount = () => {
         const password = document.querySelector('#passwordSignup').value;
         const password2 = document.querySelector('#confirmSignup').value;
 
-        const modal = document.querySelector('#modal');
-        const alertVerify = document.querySelector('#alertVerify')
         const msgAuth = document.querySelector('#smsEP');
         msgAuth.classList.add('sms-ep');
 
@@ -48,8 +46,8 @@ export const createAccount = () => {
                 // console.log('https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b');
             })
             .then(() => {
-                modal.style.display = 'block';
-                alertVerify.innerText = 'Por favor revise su bandeja de entrada para verificar su cuenta';
+                swal("Registro exitoso!", "Verificar cuenta para iniciar sesión", "success");
+                formSignup.reset();
                 currentUser().sendEmailVerification();
             })
             .catch((error) => {
