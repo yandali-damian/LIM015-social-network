@@ -17,7 +17,7 @@ export const datePost = () => {
 
 // Agregar informacion de un post a la coleccion POST
 export const createPost = (post, email, name, photoUser, uid, photoPost) => {
-    return db.collection('post').add({
+    return db.collection('post').doc().set({
         post,
         email,
         name,
@@ -36,7 +36,7 @@ export const getAllPost = () => db.collection('post').orderBy("timePost", "desc"
 export const getPost = (id) => db.collection('post').doc(id).get();
 
 // Editar un post de la colleción POST
-export const editDataPost = (id, update) => db.collection('post').doc(id).update(update);
+export const editDataPost = (id, updatePost) => db.collection('post').doc(id).update(updatePost);
 
 // Eliminar un post de la colleción POST
 export const deleteDataPost = (id) => db.collection('post').doc(id).delete();

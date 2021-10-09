@@ -187,6 +187,19 @@
     width: 100%;
 }
 
+/* Css para botón like */
+.content-btn-like {
+    padding-block: 5px;
+}
+
+.btn-like {
+    background: none;
+    border: none;
+    color: #FF0000;
+    font-size: 15px;
+    cursor: pointer;
+}
+
 /* Css para botones de edit y delete */
 .div-buttons {
     display: flex;
