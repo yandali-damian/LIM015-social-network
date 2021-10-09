@@ -35,5 +35,7 @@
   "engines": {
     "node": ">=10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "sweetalert": "^2.1.2"
+  }
 }

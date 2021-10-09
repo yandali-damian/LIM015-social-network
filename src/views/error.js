@@ -1,11 +1,8 @@
 // Función para ruta no encontrada (error 404)
-const error = () => {
-    const viewError = `<h1>Pagina no encontrado</h1>`;
-    const elementDiv = document.createElement('div');
-    elementDiv.innerHTML = viewError;
-
-    return elementDiv;
+export const error = () => {
+    const viewError = document.createElement('div');
+    viewError.innerHTML = `<figure>
+                                <img class="img-404" src="./img/404.png">
+                            </figure>`;
+    return viewError;
 }
-
-
-export { error };

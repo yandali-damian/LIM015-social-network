@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
@@ -16,7 +18,6 @@ body {
     min-height: 80vh;
     margin: 0;
 }
-/*  */
 
 /* css para contendor de title y formulario */
 .content {
@@ -28,7 +29,6 @@ body {
     max-width: 100%;
     padding-bottom: 10px;
 }
-/*  */
 
 /* css para logo de login - signup*/
 .figure-login{
@@ -45,7 +45,6 @@ body {
 .img-signup {
     display: none;
 }
-/*  */
 
 /* css para title login - signup */
 .figure-title-login, .figure-title-signup{
@@ -65,7 +64,6 @@ body {
     width: 150px;
     height: 40px;
 }
-/*  */
 
 /* css ----- Registrate ----- */
 .span-signup {
@@ -75,7 +73,6 @@ body {
     color: #8C8888;
     font-size: 20px;
 }
-/*  */
 
 /* css para formularios login - signup */
 .form-login, .form-signup{
@@ -91,7 +88,6 @@ body {
 .form-signup {
     margin-top: 25px;
 }
-/*  */
 
 /* css para contenedor de input, icon, small de login - signup */
 .form-login-inputs, .form-signup-inputs {
@@ -99,7 +95,6 @@ body {
     margin-bottom: 10px;
     padding-bottom: 20px;
 }
-/*  */
 
 /* css para inputs login - signup */
 .login-inputs, .signup-inputs{
@@ -125,7 +120,6 @@ body {
     outline: 0;
     border: 2px solid #FEA82F;
 }
-/*  */
 
 /* css de validaciones */
 .form-login-inputs i {
@@ -154,7 +148,6 @@ body {
     left: 0;
     visibility: hidden;
 }
-/*  */
 
 .form-login-inputs.error .span-alerts {
     visibility: visible;
@@ -165,7 +158,6 @@ body {
     font-size: 14px;
     line-height: 16px;
 }
-/*  */
 
 /* css para boton de login - sign up */
 .btn-login, .btn-signup {
@@ -191,8 +183,6 @@ body {
 .btn-signup:hover, .btn-login:hover {
     background: #FEA82F;
 }
-
-/*  */
 
 .span-loginWith, .span-account, .a-login-signup{
     margin-top: 10px;
@@ -235,6 +225,7 @@ div {
 
 footer {
     border-top: 2px solid #EAB351;
+    background: white;
     color: #7F7C82;
     position: fixed;
     width: 100%;
@@ -247,79 +238,3 @@ footer {
 footer p {
     padding: 0;
 }
-
-/* The Modal (background) */
-.modal {
-    display: block; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-.modal-dialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 99999;
-    display: none;
-    -webkit-transition: opacity 100ms ease-in;
-    -moz-transition: opacity 100ms ease-in;
-    transition: opacity 100ms ease-in;
-    pointer-events: block;
-}
-
-.modal-dialog:target {
-    display: block;
-    pointer-events: auto;
-}
-
-.modal-dialog > section {
-    max-width: 600px;
-    width: 80%;
-    position: relative;
-    margin: 20% auto;
-    padding: 50px 5px;
-    border-radius: 3px;
-    background: #fff;
-}
-
-.close {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #ffae88;
-    color: #fff;
-    line-height: 25px;
-    position: absolute;
-    right: -12px;
-    text-align: center;
-    top: -10px;
-    width: 34px;
-    height: 34px;
-    text-decoration: none;
-    font-weight: bold;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
-    padding-top: 5px;
-}
-
-.close:hover {
-    background: #fe2f2f;
-}
-
-.alert {
-    font-size: 18px;
-    margin: 20px;
-}
-/* end modal */

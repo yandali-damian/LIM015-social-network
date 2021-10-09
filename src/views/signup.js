@@ -1,5 +1,5 @@
 // Función para registrar un usuario
-const signup = () => {
+export const signup = () => {
     const viewSignup = document.createElement('article');
     viewSignup.className = 'article-signup';
     viewSignup.innerHTML = `<figure class="figure-signup">
@@ -13,26 +13,18 @@ const signup = () => {
                                 <form action="#" class="form-signup" id="formSignup">
                                     <div class="form-signup-inputs">
                                         <input type="text" class="signup-inputs" id="nameSignup" placeholder="Name" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <div class="form-signup-inputs">
                                         <input type="email" class="signup-inputs" id="emailSignup" placeholder="Email" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <div class="form-signup-inputs">
                                         <input type="password" class="signup-inputs" id="passwordSignup" placeholder="Password" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <div class="form-signup-inputs">
                                         <input type="password" class="signup-inputs" id="confirmSignup" placeholder="Confirm Password" />
-                                        <i class="icon icon-success fas fa-check-circle"></i>
-                                        <i class="icon icon-error fas fa-exclamation-circle"></i>
                                         <span class="msg-error"></span >
                                     </div>
                                     <span id="smsEP" class="msg-EP"><i class="fas fa-exclamation-triangle"></i></span>
@@ -46,14 +38,6 @@ const signup = () => {
                                     <span class="span-account">¿Ya tienes cuenta?</span>
                                     <a href="#/" class="a-login-signup" id="aLogin">Iniciar sesión</a>
                                 </div>
-                                <section id="modal" class='modal-dialog'>
-                                    <section><a href="#/" class='close'>X</a>
-                                        <span id="alertVerify" class="alert"></span>
-                                    </section>
-                                </section>
                             </article>`;
-
     return viewSignup;
 }
-
-export { signup };

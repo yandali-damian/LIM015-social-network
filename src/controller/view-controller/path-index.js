@@ -1,13 +1,15 @@
-import { components } from '../../views/index.js';
-import { createAccount } from '../signup.js';
-import { loginDB } from '../login.js';
-import { profile } from '../../views/profile.js';
-import { signout } from '../../firebase/signup-db.js';
+// importar firebase
 import { auth } from '../../firebase/config-firebase.js';
+import { signOut } from '../../firebase/fb-auth.js';
+
+// importar vistas
+import { components } from '../../views/index.js';
+
+import { loginDB } from '../login.js';
+import { signupDB } from '../signup.js';
+import { post } from '../post.js';
 
 export const changeView = (route) => {
-
-    console.log(route);
 
     const container = document.getElementById('container');
     container.innerHTML = ""; //Limpia en contenedor de las vistas
@@ -24,20 +26,17 @@ export const changeView = (route) => {
         case '#/signup':
             {
                 const signup = container.appendChild(components.signup()); // Diseño Vista Registrarse
-                createAccount(); //Eventos Vista Registrarse
+                signupDB(); //Eventos Vista Registrarse
                 return signup;
             }
         case '#/home':
             {
                 auth.onAuthStateChanged((user) => {
-                    console.log(user);
                     if (user) {
-                        console.log('log in: ' + user);
                         const home = container.appendChild(components.home());
-                        profile();
+                        post();
                         return home;
                     } else {
-                        console.log('log out ');
                         window.location.hash = '#/';
                     }
                 });
@@ -45,7 +44,7 @@ export const changeView = (route) => {
             }
         case '#/signout':
             {
-                signout().then(() => {
+                signOut().then(() => {
                     window.location.hash = '#/';
                 });
             }

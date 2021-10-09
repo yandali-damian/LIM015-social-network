@@ -1,10 +1,8 @@
-import { lognin } from '../firebase/login-db.js';
-import { currentUser } from '../firebase/signup-db.js';
+import { logInEmail, currentUser } from '../firebase/fb-auth.js';
 import { googleSignUp } from './google-signup.js';
-// import { auth } from '../firebase/config-firebase.js';
 
 //funcion para login
-const loginDB = () => {
+export const loginDB = () => {
     const formLogin = document.querySelector('#formLogin');
 
     const msg = document.querySelector('#smsEP');
@@ -15,9 +13,9 @@ const loginDB = () => {
         const email = document.querySelector('#inputEmail').value;
         const password = document.querySelector('#inputPassword').value;
 
-        lognin(email, password)
+        logInEmail(email, password)
             .then((response) => {
-                console.log(response);
+                //console.log(response);
                 if (currentUser().emailVerified === true) {
                     window.location.href = '#/home';
                 } else {
@@ -30,7 +28,6 @@ const loginDB = () => {
 
                 const errCode = err.code;
                 // const errMessage = err.message;
-                // console.log(errCode);
 
                 msg.style.display = 'block';
                 msg.classList.add('sms-ep');
@@ -52,11 +49,8 @@ const loginDB = () => {
                     default:
                         msg.innerText = 'Los datos ingresados son incorrectos, vuelve a ingresarlos';
                         break;
-
                 }
             });
     })
     googleSignUp();
 }
-
-export { loginDB };
