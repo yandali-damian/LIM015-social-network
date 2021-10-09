@@ -5,6 +5,7 @@ import { createPost, getAllPost, getPost, editDataPost, deleteDataPost } from '.
 import { currentUser } from '../firebase/fb-auth.js';
 import { uploadFileStorage, getFileStorage } from '../firebase/fb-storage.js';
 
+// Mostrar post en home
 export const post = () => {
     const btnCreatePost = document.querySelector('#btnCreatePost');
     const sectionModalPost = document.querySelector('#sectionModalPost');
