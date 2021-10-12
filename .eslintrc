@@ -18,6 +18,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "indent": "off",
     "linebreak-style": 0,
     "prefer-destructuring": 0,
     "import/extensions": 0,
@@ -26,14 +27,13 @@
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error"
-  },
-  "indent": [
-    "error",
-    2,
-    {
-        "SwitchCase": 1,
-        "ignoredNodes": ["ConditionalExpression"]
-    }
-  ]
+    "jest/valid-expect": "error",
+    "no-console": "off",
+    "consistent-return": "off",
+    "no-undef": "off",
+    "no-param-reassign": "off",
+    "array-callback-return": "off",
+    "arrow-body-style": "off",
+    "no-unused-expressions": "off"
+  }
 }

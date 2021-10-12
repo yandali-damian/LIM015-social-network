@@ -5,8 +5,8 @@ import { signup } from './signup.js';
 import { error } from './error.js';
 
 export const components = {
-    login: login,
-    signup: signup,
-    home: home,
-    error: error
-}
+    login,
+    signup,
+    home,
+    error,
+};

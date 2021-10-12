@@ -11,4 +11,4 @@ export const modalPost = () => {
                                     <button id="btnPublishPost" class="btn-publish-post"> Publicar </button>
                                 </section>`;
     return viewModalPost;
-}
+};

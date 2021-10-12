@@ -1,4 +1,4 @@
-//Función para iniciar sesion
+// Función para iniciar sesion
 export const login = () => {
     const viewLogin = document.createElement('article');
     viewLogin.className = 'article-login';
@@ -37,4 +37,4 @@ export const login = () => {
                                 </div>
                             <article>`;
     return viewLogin;
-}
+};

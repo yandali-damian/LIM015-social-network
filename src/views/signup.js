@@ -40,4 +40,4 @@ export const signup = () => {
                                 </div>
                             </article>`;
     return viewSignup;
-}
+};

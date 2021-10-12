@@ -4,7 +4,6 @@ import { googleSignUp } from './google-signup.js';
 
 // Registar una cuenta y guardarlo en la db
 export const signupDB = () => {
-
     const formSignup = document.querySelector('#formSignup');
 
     formSignup.addEventListener('submit', (e) => {
@@ -18,14 +17,12 @@ export const signupDB = () => {
         const msgAuth = document.querySelector('#smsEP');
         msgAuth.classList.add('sms-ep');
 
-        if (name == '' || email == '' || password == '' || password2 == '') {
+        if (name === '' || email === '' || password === '' || password2 === '') {
             msgAuth.style.display = 'block';
             msgAuth.innerText = 'Completar todos los campos';
-            return;
         } else if (password !== password2) {
             msgAuth.style.display = 'block';
             msgAuth.innerText = 'Las contraseñas no coinciden.';
-            return;
         }
 
         // Create user
@@ -36,27 +33,23 @@ export const signupDB = () => {
                 // Signed in
                 currentUser().updateProfile({
                     displayName: name,
-                    photoURL: photoURLDefault
+                    photoURL: photoURLDefault,
                 }).then(() => {
                     // console.log(currentUser().photoURL);
                 }).catch((error) => {
                     console.log(error);
-                })
+                });
                 addUsers(response.user.uid, name, photoURLDefault);
                 // console.log('https://firebasestorage.googleapis.com/v0/b/socialnetwork-warique.appspot.com/o/avatar.png?alt=media&token=efb8edcd-91b3-4044-a846-d2b408fc934b');
             })
             .then(() => {
-                swal("Registro exitoso!", "Verificar cuenta para iniciar sesión", "success");
+                swal('Registro exitoso!', 'Verificar cuenta para iniciar sesión', 'success');
                 formSignup.reset();
                 currentUser().sendEmailVerification();
             })
             .catch((error) => {
-
                 msgAuth.style.display = 'block';
 
-                // const errCode = error.code;
-                // const errMessage = error.message;
-                // console.log(error);
                 switch (error.code) {
                     case 'auth/email-already-in-use':
                         msgAuth.innerText = 'El email ya está registrado.';
@@ -66,6 +59,6 @@ export const signupDB = () => {
                         break;
                 }
             });
-    })
+    });
     googleSignUp();
-}
+};

@@ -1,7 +1,9 @@
-import { auth } from '../firebase/config-firebase.js';
+import { auth } from './config-firebase.js';
 
 // Crear un usuario
-export const createUserBD = (email, password) => auth.createUserWithEmailAndPassword(email, password);
+export const createUserBD = (email, password) => {
+    auth.createUserWithEmailAndPassword(email, password);
+};
 
 // Obtener datos del usuario
 export const currentUser = () => auth.currentUser;
@@ -12,8 +14,8 @@ export const logInEmail = (email, password) => auth.signInWithEmailAndPassword(e
 // Login con google
 export const logInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    return auth.signInWithPopup(provider)
-}
+    return auth.signInWithPopup(provider);
+};
 
-//Cerrar Sesion
+// Cerrar Sesion
 export const signOut = () => auth.signOut();
