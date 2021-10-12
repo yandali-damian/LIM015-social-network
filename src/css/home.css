@@ -200,6 +200,13 @@
     cursor: pointer;
 }
 
+.name-user-like {
+    background: none;
+    border: none;
+    color: #FF0000;
+    font-size: 15px;
+}
+
 /* Css para botones de edit y delete */
 .div-buttons {
     display: flex;

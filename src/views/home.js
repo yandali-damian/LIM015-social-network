@@ -2,7 +2,6 @@ import { currentUser } from '../firebase/fb-auth.js';
 
 // funcion para mostrar el home
 export const home = () => {
-
     const nameUser = currentUser().displayName;
     const photoUser = currentUser().photoURL;
 
@@ -25,7 +24,7 @@ export const home = () => {
                                             <a href="#/profile" class="nav-menu-link">Perfil</a>
                                         </li>
                                         <li class="nav-menu-item">
-                                            <a href="#/signout" class="nav-menu-link">Cerrar sesión</a>
+                                            <a href="#/" id="btnSignOut" class="nav-menu-link">Cerrar sesión</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -61,4 +60,4 @@ export const home = () => {
         navMenu.classList.toggle('nav-menu_visibily');
     });
     return viewHome;
-}
+};

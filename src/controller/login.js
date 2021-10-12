@@ -1,7 +1,7 @@
 import { logInEmail, currentUser } from '../firebase/fb-auth.js';
 import { googleSignUp } from './google-signup.js';
 
-//funcion para login
+// Funcion para login
 export const loginDB = () => {
     const formLogin = document.querySelector('#formLogin');
 
@@ -14,25 +14,23 @@ export const loginDB = () => {
         const password = document.querySelector('#inputPassword').value;
 
         logInEmail(email, password)
-            .then((response) => {
-                //console.log(response);
+            .then(() => {
+                // console.log(response);
                 if (currentUser().emailVerified === true) {
                     window.location.href = '#/home';
                 } else {
                     msg.style.display = 'block';
                     msg.classList.add('sms-ep');
-                    msg.innerText = `Cuenta no verificada, por favor revise su email`;
+                    msg.innerText = 'Cuenta no verificada, por favor revise su email';
                 }
-            })
-            .catch((err) => {
-
+            }).catch((err) => {
                 const errCode = err.code;
                 // const errMessage = err.message;
 
                 msg.style.display = 'block';
                 msg.classList.add('sms-ep');
 
-                //Verificando el Codigo de Error
+                // Verificando el Codigo de Error
                 switch (errCode) {
                     case ('auth/invalid-email'):
                         msg.innerText = 'Ingrese correo electronico';
@@ -41,7 +39,7 @@ export const loginDB = () => {
                         msg.innerText = 'Ingrese su contraseña';
                         break;
                     case 'auth/wrong-password':
-                        msg.innerText = `La contraseña no es correcta. Compruébala.`;
+                        msg.innerText = 'La contraseña no es correcta. Compruébala.';
                         break;
                     case 'auth/user-not-found':
                         msg.innerText = 'El correo no se encuentra registrado';
@@ -51,6 +49,6 @@ export const loginDB = () => {
                         break;
                 }
             });
-    })
+    });
     googleSignUp();
-}
+};

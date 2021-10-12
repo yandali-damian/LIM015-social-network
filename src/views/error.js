@@ -5,4 +5,4 @@ export const error = () => {
                                 <img class="img-404" src="./img/404.png">
                             </figure>`;
     return viewError;
-}
+};

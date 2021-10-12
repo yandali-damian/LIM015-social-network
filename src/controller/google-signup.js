@@ -10,8 +10,6 @@ export const googleSignUp = () => {
                 window.location.href = '#/home';
                 localStorage.setItem('user', result.user.displayName);
                 localStorage.setItem('photo', result.user.photoURL);
-            }).catch((error) => {
-                console.log(error, 'no es correcto')
-            });
+            }).catch((error) => console.log(error, 'no es correcto'));
     });
-}
+};
