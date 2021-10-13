@@ -96,6 +96,12 @@ describe('Obtener post por id', () => {
     it('is a function', () => {
         expect(typeof getPost).toBe('function');
     });
+
+    it('Debería poder obtener el contendido del post con id:abc001', () =>
+        getPost('abc001')
+        .then((data) => {
+        expect(data.data().post).toBe('Chicos! Visiten este lugar, Marakos.');
+    }));
 });
 
 describe('Editar un post', () => {
@@ -103,7 +109,7 @@ describe('Editar un post', () => {
         expect(typeof editDataPost).toBe('function');
     });
 
-    it('Debería editar un post con el id: abc003', () => {
+    it('Debería editar un post con el id: abc002', () => {
         return editDataPost('abc002', { post: 'Hola editando post' })
         .then(() => {
             getAllPost().then((data) => {
