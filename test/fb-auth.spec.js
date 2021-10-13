@@ -19,7 +19,7 @@ global.firebase = firebasemock.MockFirebaseSdk(
     () => mockauth,
 );
 
-describe('Crear un usuario con email', () => {
+describe('createUserBD', () => {
     it('is a function', () => {
         expect(typeof createUserBD).toBe('function');
     });
@@ -39,7 +39,7 @@ describe('Crear un usuario con email', () => {
     });
 });
 
-describe('Usuario actual', () => {
+describe('currentUser', () => {
     it('is a function', () => {
         expect(typeof currentUser).toBe('function');
     });
@@ -59,7 +59,7 @@ describe('Usuario actual', () => {
     });
 });
 
-describe('Login con email', () => {
+describe('logInEmail', () => {
     it('is a function', () => {
         expect(typeof logInEmail).toBe('function');
     });
@@ -77,31 +77,20 @@ describe('Login con google', () => {
         expect(typeof logInWithGoogle).toBe('function');
     });
 
-    // it('Debería iniciar sesión con google', (done) => {
-    //     // expect.assertions(1);
-
-    //     logInWithGoogle()
-    //     .then((data) => {
-    //         const providerGoogle = data.providerData[0].providerId;
-    //         console.log(data);
-    //         expect(providerGoogle).toBe('google.com');
-    //         done();
-    //     });
-    // });
     it('Debería poder ingresar con su cuenta de Google', () => {
         logInWithGoogle()
-        .then((userGoogle) => {
-            console.log(userGoogle.providerData.providerId);
-            expect(userGoogle.isAnonymous).toBe(false);
-            expect(userGoogle.providerData.providerId).toBe('google.com');
+        .then((data) => {
+            expect(data.isAnonymous).toBe(false);
+            expect(data.providerData.providerId).toBe('google.com');
         });
     });
 });
 
-describe('Log out', () => {
+describe('signOut', () => {
     it('Debería ser una función', () => {
         expect(typeof signOut).toBe('function');
     });
+
     it('Deberia salir de sesión', () => {
         signOut()
             .then((data) => {
