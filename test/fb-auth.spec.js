@@ -77,24 +77,35 @@ describe('Login con google', () => {
         expect(typeof logInWithGoogle).toBe('function');
     });
 
-    it('Debería iniciar sesión con google', () => {
-        return logInWithGoogle()
-        .then((data) => {
-            console.log(data);
-            expect(data.email).toBe(undefined);
-        }).catch(() => {});
+    // it('Debería iniciar sesión con google', (done) => {
+    //     // expect.assertions(1);
+
+    //     logInWithGoogle()
+    //     .then((data) => {
+    //         const providerGoogle = data.providerData[0].providerId;
+    //         console.log(data);
+    //         expect(providerGoogle).toBe('google.com');
+    //         done();
+    //     });
+    // });
+    it('Debería poder ingresar con su cuenta de Google', () => {
+        logInWithGoogle()
+        .then((userGoogle) => {
+            console.log(userGoogle.providerData.providerId);
+            expect(userGoogle.isAnonymous).toBe(false);
+            expect(userGoogle.providerData.providerId).toBe('google.com');
+        });
     });
 });
 
-describe('Cerrar sesión', () => {
-    it('is a function', () => {
+describe('Log out', () => {
+    it('Debería ser una función', () => {
         expect(typeof signOut).toBe('function');
     });
-
-    it('Debería iniciar sesión con email', () => {
-        return signOut()
-        .then((data) => {
-            expect(data).toBe(undefined);
-        }).catch(() => {});
+    it('Deberia salir de sesión', () => {
+        signOut()
+            .then((data) => {
+                expect(data).toBe(undefined);
+            });
     });
 });
