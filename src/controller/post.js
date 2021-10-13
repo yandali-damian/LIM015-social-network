@@ -220,7 +220,7 @@ const showAllPost = () => {
                                         </figure>
                                         <div class="content-btn-like">
                                             <button class="btn-like"><i class="far fa-heart" id="btnLike-${doc.id}" data-id="${doc.id}"></i></button>
-                                            <span id="nameUserlike-${doc.id}" class="name-user-like">${(infoPost.likes.length) ? currentUser().displayName : ''}</span>
+                                            <span id="nameUserlike-${doc.id}" class="name-user-like">${(infoPost.likes.length) ? infoPost.likes.length : ''}</span>
                                         </div>
                                         <div class="div-buttons" data-id="${infoPost.uid}">
                                             <button class="btn-edit" data-id="${doc.id}"><i class="fas fa-edit"></i>Edit</button>
